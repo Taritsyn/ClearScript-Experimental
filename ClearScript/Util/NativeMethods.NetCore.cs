@@ -28,12 +28,12 @@ namespace Microsoft.ClearScript.Util
 
         public static void VariantInit(IntPtr pVariant)
         {
-            throw new PlatformNotSupportedException();
+            throw new /*JSES- PlatformNotSupportedException()*/NotSupportedException();
         }
 
         public static uint VariantClear(IntPtr pVariant)
         {
-            throw new PlatformNotSupportedException();
+            throw new /*JSES- PlatformNotSupportedException()*/NotSupportedException();
         }
     }
 }

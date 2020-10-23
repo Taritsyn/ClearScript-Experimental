@@ -1,8 +1,7 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <UseWPF>true</UseWPF>
     <RootNamespace>Microsoft.ClearScript</RootNamespace>
     <AssemblyName>ClearScript</AssemblyName>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
@@ -64,8 +63,7 @@
     <Compile Include="..\..\ClearScript\HostIndexedProperty.cs" Link="HostIndexedProperty.cs" />
     <Compile Include="..\..\ClearScript\HostItem.cs" Link="HostItem.cs" />
     <Compile Include="..\..\ClearScript\HostItem.InvokeMethod.cs" Link="HostItem.InvokeMethod.cs" />
-    <Compile Include="..\..\ClearScript\HostItem.Windows.cs" Link="HostItem.Windows.cs" />
-    <Compile Include="..\..\ClearScript\HostItem.Windows.NetCore.cs" Link="HostItem.Windows.NetCore.cs" />
+    <Compile Include="..\..\ClearScript\HostItem.NetCore.cs" Link="HostItem.NetCore.cs" />
     <Compile Include="..\..\ClearScript\HostItemCollateral.cs" Link="HostItemCollateral.cs" />
     <Compile Include="..\..\ClearScript\HostItemFlags.cs" Link="HostItemFlags.cs" />
     <Compile Include="..\..\ClearScript\HostList.cs" Link="HostList.cs" />
@@ -140,12 +138,12 @@
     <Compile Include="..\..\ClearScript\Util\MemberHelpers.cs" Link="Util\MemberHelpers.cs" />
     <Compile Include="..\..\ClearScript\Util\MemberMap.cs" Link="Util\MemberMap.cs" />
     <Compile Include="..\..\ClearScript\Util\MiscHelpers.cs" Link="Util\MiscHelpers.cs" />
-    <Compile Include="..\..\ClearScript\Util\MiscHelpers.Windows.cs" Link="Util\MiscHelpers.Windows.cs" />
+    <Compile Include="..\..\ClearScript\Util\MiscHelpers.NetCore.cs" Link="Util\MiscHelpers.NetCore.cs" />
     <Compile Include="..\..\ClearScript\Util\NativeCallbackTimer.cs" Link="Util\NativeCallbackTimer.cs" />
-    <Compile Include="..\..\ClearScript\Util\NativeMethods.Windows.cs" Link="Util\NativeMethods.Windows.cs" />
+    <Compile Include="..\..\ClearScript\Util\NativeMethods.NetCore.cs" Link="Util\NativeMethods.NetCore.cs" />
     <Compile Include="..\..\ClearScript\Util\Nonexistent.cs" Link="Util\Nonexistent.cs" />
     <Compile Include="..\..\ClearScript\Util\ObjectHelpers.cs" Link="Util\ObjectHelpers.cs" />
-    <Compile Include="..\..\ClearScript\Util\ObjectHelpers.Windows.cs" Link="Util\ObjectHelpers.Windows.cs" />
+    <Compile Include="..\..\ClearScript\Util\ObjectHelpers.NetCore.cs" Link="Util\ObjectHelpers.NetCore.cs" />
     <Compile Include="..\..\ClearScript\Util\OneWayFlag.cs" Link="Util\OneWayFlag.cs" />
     <Compile Include="..\..\ClearScript\Util\Scope.cs" Link="Util\Scope.cs" />
     <Compile Include="..\..\ClearScript\Util\SocketHelpers.cs" Link="Util\SocketHelpers.cs" />
@@ -157,8 +155,6 @@
     <Compile Include="..\..\ClearScript\Util\TypeHelpers.NetCore.cs" Link="Util\TypeHelpers.NetCore.cs" />
     <Compile Include="..\..\ClearScript\Util\UniqueNameManager.cs" Link="Util\UniqueNameManager.cs" />
     <Compile Include="..\..\ClearScript\Util\UnmanagedMemoryHelpers.cs" Link="Util\UnmanagedMemoryHelpers.cs" />
-    <Compile Include="..\..\ClearScript\Util\VTableHelpers.cs" Link="Util\VTableHelpers.cs" />
-    <Compile Include="..\..\ClearScript\Util\VTablePatcher.cs" Link="Util\VTablePatcher.cs" />
     <Compile Include="..\..\ClearScript\Util\Web\WebContext.cs" Link="Util\Web\WebContext.cs" />
     <Compile Include="..\..\ClearScript\Util\Web\WebRequest.cs" Link="Util\Web\WebRequest.cs" />
     <Compile Include="..\..\ClearScript\Util\Web\WebResponse.cs" Link="Util\Web\WebResponse.cs" />
@@ -174,9 +170,7 @@
     <Compile Include="..\..\ClearScript\V8\SplitProxy\V8SplitProxyHelpers.cs" Link="V8\SplitProxy\V8SplitProxyHelpers.cs" />
     <Compile Include="..\..\ClearScript\V8\SplitProxy\V8SplitProxyManaged.cs" Link="V8\SplitProxy\V8SplitProxyManaged.cs" />
     <Compile Include="..\..\ClearScript\V8\SplitProxy\V8SplitProxyNative.cs" Link="V8\SplitProxy\V8SplitProxyNative.cs" />
-    <Compile Include="..\..\ClearScript\V8\SplitProxy\V8SplitProxyNative.Windows.32.cs" Link="V8\SplitProxy\V8SplitProxyNative.Windows.32.cs" />
-    <Compile Include="..\..\ClearScript\V8\SplitProxy\V8SplitProxyNative.Windows.64.cs" Link="V8\SplitProxy\V8SplitProxyNative.Windows.64.cs" />
-    <Compile Include="..\..\ClearScript\V8\SplitProxy\V8SplitProxyNative.Windows.cs" Link="V8\SplitProxy\V8SplitProxyNative.Windows.cs" />
+    <Compile Include="..\..\ClearScript\V8\SplitProxy\V8SplitProxyNative.Impl.cs" Link="V8\SplitProxy\V8SplitProxyNative.Impl.cs" />
     <Compile Include="..\..\ClearScript\V8\SplitProxy\V8ContextProxyImpl.cs" Link="V8\SplitProxy\V8ContextProxyImpl.cs" />
     <Compile Include="..\..\ClearScript\V8\SplitProxy\V8IsolateProxyImpl.cs" Link="V8\SplitProxy\V8IsolateProxyImpl.cs" />
     <Compile Include="..\..\ClearScript\V8\SplitProxy\V8ObjectImpl.cs" Link="V8\SplitProxy\V8ObjectImpl.cs" />
@@ -191,7 +185,6 @@
     <Compile Include="..\..\ClearScript\V8\V8DebugClient.cs" Link="V8\V8DebugClient.cs" />
     <Compile Include="..\..\ClearScript\V8\V8IsolateProxy.cs" Link="V8\V8IsolateProxy.cs" />
     <Compile Include="..\..\ClearScript\V8\V8Proxy.cs" Link="V8\V8Proxy.cs" />
-    <Compile Include="..\..\ClearScript\V8\V8Proxy.Windows.cs" Link="V8\V8Proxy.Windows.cs" />
     <Compile Include="..\..\ClearScript\V8\V8ProxyHelpers.cs" Link="V8\V8ProxyHelpers.cs" />
     <Compile Include="..\..\ClearScript\V8\V8Runtime.cs" Link="V8\V8Runtime.cs" />
     <Compile Include="..\..\ClearScript\V8\V8RuntimeConstraints.cs" Link="V8\V8RuntimeConstraints.cs" />
@@ -203,19 +196,14 @@
     <Compile Include="..\..\ClearScript\V8\V8ScriptItem.cs" Link="V8\V8ScriptItem.cs" />
     <Compile Include="..\..\ClearScript\V8\V8TestProxy.cs" Link="V8\V8TestProxy.cs" />
     <Compile Include="..\..\ClearScript\VoidResult.cs" Link="VoidResult.cs" />
-    <Compile Include="..\..\ClearScript\Windows\ActiveXDebugging.cs" Link="Windows\ActiveXDebugging.cs" />
-    <Compile Include="..\..\ClearScript\Windows\ActiveXScripting.cs" Link="Windows\ActiveXScripting.cs" />
-    <Compile Include="..\..\ClearScript\Windows\ActiveXWrappers.cs" Link="Windows\ActiveXWrappers.cs" />
     <Compile Include="..\..\ClearScript\Windows\IHostWindow.cs" Link="Windows\IHostWindow.cs" />
     <Compile Include="..\..\ClearScript\Windows\IWindowsScriptObject.cs" Link="Windows\IWindowsScriptObject.cs" />
-    <Compile Include="..\..\ClearScript\Windows\JScriptEngine.cs" Link="Windows\JScriptEngine.cs" />
+    <Compile Include="..\..\ClearScript\Windows\JScriptEngine.NetCore.cs" Link="Windows\JScriptEngine.NetCore.cs" />
     <Compile Include="..\..\ClearScript\Windows\Nothing.cs" Link="Windows\Nothing.cs" />
-    <Compile Include="..\..\ClearScript\Windows\VBScriptEngine.cs" Link="Windows\VBScriptEngine.cs" />
-    <Compile Include="..\..\ClearScript\Windows\WindowsScriptEngine.cs" Link="Windows\WindowsScriptEngine.cs" />
-    <Compile Include="..\..\ClearScript\Windows\WindowsScriptEngine.Debug.cs" Link="Windows\WindowsScriptEngine.Debug.cs" />
-    <Compile Include="..\..\ClearScript\Windows\WindowsScriptEngine.Site.cs" Link="Windows\WindowsScriptEngine.Site.cs" />
+    <Compile Include="..\..\ClearScript\Windows\VBScriptEngine.NetCore.cs" Link="Windows\VBScriptEngine.NetCore.cs" />
+    <Compile Include="..\..\ClearScript\Windows\WindowsScriptEngine.NetCore.cs" Link="Windows\WindowsScriptEngine.NetCore.cs" />
     <Compile Include="..\..\ClearScript\Windows\WindowsScriptEngineFlags.cs" Link="Windows\WindowsScriptEngineFlags.cs" />
-    <Compile Include="..\..\ClearScript\Windows\WindowsScriptItem.cs" Link="Windows\WindowsScriptItem.cs" />
+    <Compile Include="..\..\ClearScript\Windows\WindowsScriptItem.NetCore.cs" Link="Windows\WindowsScriptItem.NetCore.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -226,21 +214,6 @@
     <Folder Include="Util\Web\" />
     <Folder Include="V8\SplitProxy\" />
     <Folder Include="Windows\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="..\..\bin\$(Configuration)\ClearScriptV8-32.dll" Link="ClearScriptV8-32.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-	<Content Include="..\..\bin\$(Configuration)\ClearScriptV8-32.pdb" Link="ClearScriptV8-32.pdb">
-	  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-	</Content>
-	<Content Include="..\..\bin\$(Configuration)\ClearScriptV8-64.dll" Link="ClearScriptV8-64.dll">
-	  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-	</Content>
-	<Content Include="..\..\bin\$(Configuration)\ClearScriptV8-64.pdb" Link="ClearScriptV8-64.pdb">
-	  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-	</Content>
   </ItemGroup>
 
 </Project>

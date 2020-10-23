@@ -23,9 +23,9 @@ BEGIN
         BEGIN
             VALUE "FileDescription", "ClearScript V8 Library (32-bit)"
             VALUE "FileVersion", CLEARSCRIPT_VERSION_STRING
-            VALUE "InternalName", "ClearScriptV8-32.dll"
+            VALUE "InternalName", "ClearScriptV8.dll"
             VALUE "LegalCopyright", "(c) Microsoft Corporation"
-            VALUE "OriginalFilename", "ClearScriptV8-32.dll"
+            VALUE "OriginalFilename", "ClearScriptV8.dll"
             VALUE "ProductName", "ClearScript"
             VALUE "ProductVersion", CLEARSCRIPT_VERSION_STRING_INFORMATIONAL
         END

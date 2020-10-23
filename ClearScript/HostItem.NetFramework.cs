@@ -1,4 +1,4 @@
-﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT license.
 
 using System;
@@ -23,6 +23,11 @@ namespace Microsoft.ClearScript
         #endregion
 
         #region initialization
+
+        private static HostItem Create(ScriptEngine engine, HostTarget target, HostItemFlags flags)
+        {
+            return TargetSupportsExpandoMembers(target, flags) ? new ExpandoHostItem(engine, target, flags) : new HostItem(engine, target, flags);
+        }
 
         private static bool TargetSupportsExpandoMembers(HostTarget target, HostItemFlags flags)
         {

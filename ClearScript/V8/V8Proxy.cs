@@ -13,13 +13,16 @@ namespace Microsoft.ClearScript.V8
 {
     internal abstract partial class V8Proxy : IDisposable
     {
+        /*JSES-
         private static readonly object dataLock = new object();
 
         private static IntPtr hNativeAssembly;
         private static ulong splitImplCount;
 
+        */
         internal static bool OnEntityHolderCreated()
         {
+            /*JSES-
             lock (dataLock)
             {
                 if (hNativeAssembly == IntPtr.Zero)
@@ -31,10 +34,18 @@ namespace Microsoft.ClearScript.V8
                 ++splitImplCount;
                 return true;
             }
+            */
+#if NETFRAMEWORK //JSES+
+            V8AssemblyResolver.Initialize(); //JSES+
+#endif //JSES+
+            V8SplitProxyNative.InvokeNoThrow(instance => instance.V8SplitProxyManaged_SetMethodTable(V8SplitProxyManaged.MethodTable)); //JSES+
+
+            return true; //JSES+
         }
 
         internal static void OnEntityHolderDestroyed()
         {
+            /*JSES-
             lock (dataLock)
             {
                 if (--splitImplCount < 1)
@@ -42,8 +53,11 @@ namespace Microsoft.ClearScript.V8
                     FreeLibrary(hNativeAssembly);
                     hNativeAssembly = IntPtr.Zero;
                 }
+                --splitImplCount;
             }
+            */
         }
+        /*JSES-
 
         private static IntPtr LoadNativeLibrary(string baseFileName, string prefix, string suffix32, string suffix64, string extension)
         {
@@ -104,12 +118,14 @@ namespace Microsoft.ClearScript.V8
                 }
             }
         }
+        */
 
         #region IDisposable implementation (abstract)
 
         public abstract void Dispose();
 
         #endregion
+        /*JSES-
 
         #region unit test support
 
@@ -129,5 +145,6 @@ namespace Microsoft.ClearScript.V8
         }
 
         #endregion
+        */
     }
 }

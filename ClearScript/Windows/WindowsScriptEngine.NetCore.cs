@@ -51,7 +51,7 @@ namespace Microsoft.ClearScript.Windows
         /// <returns><c>True</c> if the calling thread has access to the current script engine, <c>false</c> otherwise.</returns>
         public bool CheckAccess()
         {
-            throw new PlatformNotSupportedException();
+            throw new /*JSES- PlatformNotSupportedException()*/NotSupportedException();
         }
 
         /// <summary>
@@ -59,7 +59,7 @@ namespace Microsoft.ClearScript.Windows
         /// </summary>
         public void VerifyAccess()
         {
-            throw new PlatformNotSupportedException();
+            throw new /*JSES- PlatformNotSupportedException()*/NotSupportedException();
         }
 
         /// <summary>
@@ -74,11 +74,11 @@ namespace Microsoft.ClearScript.Windows
         /// <summary>
         /// Allows the host to access script resources directly.
         /// </summary>
-        public override dynamic Script => throw new PlatformNotSupportedException();
+        public override dynamic Script => throw new /*JSES- PlatformNotSupportedException()*/NotSupportedException();
 
-        internal override IUniqueNameManager DocumentNameManager => throw new PlatformNotSupportedException();
+        internal override IUniqueNameManager DocumentNameManager => throw new /*JSES- PlatformNotSupportedException()*/NotSupportedException();
 
-        internal override HostItemCollateral HostItemCollateral => throw new PlatformNotSupportedException();
+        internal override HostItemCollateral HostItemCollateral => throw new /*JSES- PlatformNotSupportedException()*/NotSupportedException();
 
         /// <summary>
         /// Performs garbage collection.
@@ -86,7 +86,7 @@ namespace Microsoft.ClearScript.Windows
         /// <param name="exhaustive"><c>True</c> to perform exhaustive garbage collection, <c>false</c> to favor speed over completeness.</param>
         public override void CollectGarbage(bool exhaustive)
         {
-            throw new PlatformNotSupportedException();
+            throw new /*JSES- PlatformNotSupportedException()*/NotSupportedException();
         }
 
         /// <summary>
@@ -95,7 +95,7 @@ namespace Microsoft.ClearScript.Windows
         /// <returns>The script call stack formatted as a string.</returns>
         public override string GetStackTrace()
         {
-            throw new PlatformNotSupportedException();
+            throw new /*JSES- PlatformNotSupportedException()*/NotSupportedException();
         }
 
         /// <summary>
@@ -103,32 +103,32 @@ namespace Microsoft.ClearScript.Windows
         /// </summary>
         public override void Interrupt()
         {
-            throw new PlatformNotSupportedException();
+            throw new /*JSES- PlatformNotSupportedException()*/NotSupportedException();
         }
 
         internal override void AddHostItem(string itemName, HostItemFlags flags, object item)
         {
-            throw new PlatformNotSupportedException();
+            throw new /*JSES- PlatformNotSupportedException()*/NotSupportedException();
         }
 
         internal override object Execute(UniqueDocumentInfo documentInfo, string code, bool evaluate)
         {
-            throw new PlatformNotSupportedException();
+            throw new /*JSES- PlatformNotSupportedException()*/NotSupportedException();
         }
 
         internal override object ExecuteRaw(UniqueDocumentInfo documentInfo, string code, bool evaluate)
         {
-            throw new PlatformNotSupportedException();
+            throw new /*JSES- PlatformNotSupportedException()*/NotSupportedException();
         }
 
         internal override object MarshalToHost(object obj, bool preserveHostTarget)
         {
-            throw new PlatformNotSupportedException();
+            throw new /*JSES- PlatformNotSupportedException()*/NotSupportedException();
         }
 
         internal override object MarshalToScript(object obj, HostItemFlags flags)
         {
-            throw new PlatformNotSupportedException();
+            throw new /*JSES- PlatformNotSupportedException()*/NotSupportedException();
         }
 
         #endregion

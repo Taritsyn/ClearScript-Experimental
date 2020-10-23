@@ -24,6 +24,7 @@ namespace Microsoft.ClearScript.Util
 
     internal static class NativeMethods
     {
+        /*JSES-
         [DllImport("kernel32", ExactSpelling = true, SetLastError = true)]
         public static extern IntPtr LoadLibraryW(
             [In] [MarshalAs(UnmanagedType.LPWStr)] string path
@@ -35,6 +36,7 @@ namespace Microsoft.ClearScript.Util
             [In] IntPtr hLibrary
         );
 
+        */
         [DllImport("ole32.dll", ExactSpelling = true)]
         public static extern uint CLSIDFromProgID(
             [In] [MarshalAs(UnmanagedType.LPWStr)] string progID,
@@ -109,5 +111,10 @@ namespace Microsoft.ClearScript.Util
         public static extern void GetNativeSystemInfo(
             [Out] out SystemInfo info
         );
+
+        [DllImport("kernel32.dll", SetLastError = true)] //JSES+
+        public static extern bool SetDllDirectory( //JSES+
+            [In] string lpPathName //JSES+
+        ); //JSES+
     }
 }
