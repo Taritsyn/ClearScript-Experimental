@@ -7,7 +7,6 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using Microsoft.ClearScript.Util;
-using Microsoft.ClearScript.V8.SplitProxy;
 
 namespace Microsoft.ClearScript.V8
 {
@@ -28,7 +27,6 @@ namespace Microsoft.ClearScript.V8
                 if (hNativeAssembly == IntPtr.Zero)
                 {
                     hNativeAssembly = LoadNativeAssembly();
-                    V8SplitProxyNative.InvokeNoThrow(instance => instance.V8SplitProxyManaged_SetMethodTable(V8SplitProxyManaged.MethodTable));
                 }
 
                 ++splitImplCount;
@@ -38,7 +36,6 @@ namespace Microsoft.ClearScript.V8
 #if NETFRAMEWORK //JSES+
             V8AssemblyResolver.Initialize(); //JSES+
 #endif //JSES+
-            V8SplitProxyNative.InvokeNoThrow(instance => instance.V8SplitProxyManaged_SetMethodTable(V8SplitProxyManaged.MethodTable)); //JSES+
 
             return true; //JSES+
         }
@@ -53,7 +50,6 @@ namespace Microsoft.ClearScript.V8
                     FreeLibrary(hNativeAssembly);
                     hNativeAssembly = IntPtr.Zero;
                 }
-                --splitImplCount;
             }
             */
         }
